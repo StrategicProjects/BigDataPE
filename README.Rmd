@@ -1,25 +1,31 @@
+---
+output: github_document
+---
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  out.width = "100%"
+)
+```
 
 # BigDataPE <a href="https://monitoramento.sepe.pe.gov.br/bigdatape/"><img src="man/figures/logo.png" align="right" height="106" alt="BigDataPE website" /></a>
 
 <!-- badges: start -->
-
 ![](https://img.shields.io/badge/devel%20version-0.0.9-blue.svg)
 <!-- badges: end -->
 
-**BigDataPE** is an R package that provides a secure and intuitive way
-to access datasets from the [BigDataPE
-platform](https://www.bigdata.pe.gov.br/). The package allows users to
-fetch data from the API using token-based authentication, manage
-multiple tokens for different datasets, and retrieve data efficiently
-using chunking.
+**BigDataPE** is an R package that provides a secure and intuitive way to access datasets from the [BigDataPE platform](https://www.bigdata.pe.gov.br/). The package allows users to fetch data from the API using token-based authentication, manage multiple tokens for different datasets, and retrieve data efficiently using chunking.
 
 ## Installation
 
 You can install the `BigDataPE` package directly from GitHub:
 
-``` r
+```r
 # Install the devtools package if you haven't already
 install.packages("devtools")
 
@@ -29,7 +35,7 @@ devtools::install_github("StrategicProjects/bigdatape")
 
 After installation, load the package:
 
-``` r
+```r
 library(BigDataPE)
 ```
 
@@ -44,10 +50,9 @@ library(BigDataPE)
 
 ### 1. Store Token: `bdpe_store_token`
 
-This function securely stores an authentication token for a specific
-dataset.
+This function securely stores an authentication token for a specific dataset.
 
-``` r
+```r
 bdpe_store_token(base_name, token)
 ```
 
@@ -58,18 +63,17 @@ bdpe_store_token(base_name, token)
 
 **Example**:
 
-``` r
+```r
 bdpe_store_token("education_dataset", "your-token-here")
 ```
 
-------------------------------------------------------------------------
+---
 
 ### 2. Retrieve Token: `bdpe_get_token`
 
-This function retrieves the securely stored token for a specific
-dataset.
+This function retrieves the securely stored token for a specific dataset.
 
-``` r
+```r
 bdpe_get_token(base_name)
 ```
 
@@ -78,18 +82,17 @@ bdpe_get_token(base_name)
 - `base_name`: The name of the dataset.
 
 **Example**:
-
-``` r
+```r
 token <- bdpe_get_token("education_dataset")
 ```
 
-------------------------------------------------------------------------
+---
 
 ### 3. Remove Token: `bdpe_remove_token`
 
 This function removes the token associated with a specific dataset.
 
-``` r
+```r
 bdpe_remove_token(base_name)
 ```
 
@@ -98,36 +101,34 @@ bdpe_remove_token(base_name)
 - `base_name`: The name of the dataset.
 
 **Example**:
-
-``` r
+```r
 bdpe_remove_token("education_dataset")
 ```
 
-------------------------------------------------------------------------
+---
 
 ### 4. List Tokens: `bdpe_list_tokens`
 
 This function lists all datasets with stored tokens.
 
-``` r
+```r
 bdpe_list_tokens()
 ```
 
 **Example**:
 
-``` r
+```r
 datasets <- bdpe_list_tokens()
 print(datasets)
 ```
 
-------------------------------------------------------------------------
+---
 
 ### 5. Fetch Data: `bdpe_fetch_data`
 
-This function retrieves data from the BigDataPE API using securely
-stored tokens.
+This function retrieves data from the BigDataPE API using securely stored tokens.
 
-``` r
+```r
 bdpe_fetch_data(
   base_name, 
   limit = 100, 
@@ -146,17 +147,17 @@ bdpe_fetch_data(
 
 **Example**:
 
-``` r
+```r
 data <- bdpe_fetch_data("education_dataset", limit = 50)
 ```
 
-------------------------------------------------------------------------
+---
 
 ### 6. Fetch Data in Chunks: `bdpe_fetch_chunks`
 
 This function retrieves data from the API iteratively in chunks.
 
-``` r
+```r
 bdpe_fetch_chunks(
   base_name, 
   total_limit = Inf, 
@@ -168,15 +169,14 @@ bdpe_fetch_chunks(
 **Parameters**:
 
 - `base_name`: The name of the dataset.
-- `total_limit`: Maximum number of records to fetch. Default is `Inf`
-  (fetch all available data).
+- `total_limit`: Maximum number of records to fetch. Default is `Inf` (fetch all available data).
 - `chunk_size`: Number of records per chunk. Default is 50.000
 - `query`: Additional query parameters.
 - `endpoint`: The API endpoint URL.
 
 **Example**:
 
-``` r
+```r
 # Fetch up to 500 records in chunks of 100
 data <- bdpe_fetch_chunks(
           "education_dataset", 
@@ -189,13 +189,13 @@ all_data <- bdpe_fetch_chunks(
               chunk_size = 200)
 ```
 
-------------------------------------------------------------------------
+---
 
 ### 7. Construct URL with Query Parameters: `parse_queries`
 
 This internal function constructs a URL with query parameters.
 
-``` r
+```r
 parse_queries(url, query_list)
 ```
 
@@ -206,7 +206,7 @@ parse_queries(url, query_list)
 
 **Example**:
 
-``` r
+```r
 url <- parse_queries(
             "https://www.example.com", 
             list(param1 = "value1", param2 = "value2")
@@ -214,13 +214,13 @@ url <- parse_queries(
 print(url)
 ```
 
-------------------------------------------------------------------------
+---
 
 ## Example Workflow
 
 Here’s a complete example workflow:
 
-``` r
+```r
 # Store a token for a dataset
 bdpe_store_token("education_dataset", "your-token-here")
 
@@ -240,17 +240,14 @@ datasets <- bdpe_list_tokens()
 bdpe_remove_token("education_dataset")
 ```
 
-------------------------------------------------------------------------
+---
 
 ## Contributing
 
-If you find any issues or have feature requests, feel free to create an
-issue or a pull request on
-[GitHub](https://github.com/StrategicProjects/bigdatape).
+If you find any issues or have feature requests, feel free to create an issue or a pull request on [GitHub](https://github.com/StrategicProjects/bigdatape).
 
-------------------------------------------------------------------------
+---
 
 ## License
 
-This package is licensed under the MIT License. See the `LICENSE` file
-for more details.
+This package is licensed under the MIT License. See the `LICENSE` file for more details.
