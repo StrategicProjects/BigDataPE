@@ -7,11 +7,13 @@
 bdpe_list_tokens()
 }
 \value{
-A vector of strings containing the names of datasets.
+A character vector of dataset names with stored tokens. If the keyring cannot be accessed,
+an empty vector is returned with a message.
 }
 \description{
-This function returns a list of datasets with securely stored
-authentication tokens.
+This function returns a list of datasets that have stored tokens in the keyring.
+If the keyring cannot be accessed (e.g., in a virtual machine or unsupported environment),
+it returns an empty vector and prints a message.
 }
 \examples{
 bdpe_list_tokens()

@@ -39,36 +39,52 @@ parse_queries <- function(url, query_list) {
 #' Store a token securely for a specific dataset
 #'
 #' This function securely stores an authentication token
-#' for a specific dataset using the `keyring` package.
+#' for a specific dataset using the `keyring` package. If the
+#' keyring is not accessible (e.g., in a virtual machine or unsupported environment),
+#' it prints a message and does not attempt to store the token.
+#'
 #' @param base_name The name of the dataset.
 #' @param token The authentication token for the dataset.
 #'
-#' @return No return value. The token is securely stored.
+#' @return No return value. If the keyring is available, the token is securely stored.
+#'         Otherwise, a message is displayed.
 #' @examples
 #' bdpe_store_token("education_dataset", "your-token-here")
 #' @export
 bdpe_store_token <- function(base_name, token) {
+  # Validate inputs
   if (!is.character(base_name) || !nzchar(base_name)) {
     stop("Dataset name must be a valid string.")
   }
   if (!is.character(token) || !nzchar(token)) {
     stop("Token must be a valid string.")
   }
-  keyring::key_set_with_value(service = "BigDataPE",
-                              username = base_name,
-                              password = token)
-  message("Token successfully stored for dataset: ", base_name)
+
+  # Attempt to store the token in the keyring
+  tryCatch(
+    {
+      keyring::key_set_with_value(service = "BigDataPE",
+                                  username = base_name,
+                                  password = token)
+      message("Token successfully stored for dataset: ", base_name)
+    },
+    error = function(e) {
+      # Graceful fallback if keyring is not accessible
+      message("Keyring not accessible. Token could not be securely stored. Ensure the keyring is supported in this environment.")
+    }
+  )
 }
 
 
 #' Retrieve the token associated with a specific dataset
 #'
 #' This function retrieves the authentication token securely
-#' stored for a specific dataset.
+#' stored for a specific dataset. If the token is not found,
+#' it returns `NULL` and prints a message instead of throwing an error.
 #'
 #' @param base_name The name of the dataset.
 #'
-#' @return A string containing the authentication token.
+#' @return A string containing the authentication token, or `NULL` if the token is not found.
 #' @examples
 #' token <- bdpe_get_token("education_dataset")
 #' @export
@@ -76,19 +92,31 @@ bdpe_get_token <- function(base_name) {
   if (!is.character(base_name) || !nzchar(base_name)) {
     stop("Dataset name must be a valid string.")
   }
-  token <- keyring::key_get(service = "BigDataPE", username = base_name)
-  if (is.null(token)) stop("No token found for dataset: ", base_name)
+
+  # Attempt to retrieve the token
+  token <- tryCatch(
+    keyring::key_get(service = "BigDataPE", username = base_name),
+    error = function(e) NULL
+  )
+
+  # If token is NULL, print a message
+  if (is.null(token)) {
+    message("No token found for dataset: ", base_name)
+    return(NULL)
+  }
+
   return(token)
 }
 
 #' Remove the token associated with a specific dataset
 #'
 #' This function removes the securely stored authentication
-#' token for a specific dataset.
+#' token for a specific dataset. If the token is not found,
+#' it prints a message and does not throw an error.
 #'
 #' @param base_name The name of the dataset.
 #'
-#' @return No return value. The token is removed.
+#' @return No return value. If the token is found, it is removed. If not, a message is displayed.
 #' @examples
 #' bdpe_remove_token("education_dataset")
 #' @export
@@ -96,22 +124,43 @@ bdpe_remove_token <- function(base_name) {
   if (!is.character(base_name) || !nzchar(base_name)) {
     stop("Dataset name must be a valid string.")
   }
-  keyring::key_delete(service = "BigDataPE", username = base_name)
-  message("Token successfully removed for dataset: ", base_name)
+
+  # Attempt to remove the token
+  tryCatch(
+    {
+      keyring::key_delete(service = "BigDataPE", username = base_name)
+      message("Token successfully removed for dataset: ", base_name)
+    },
+    error = function(e) {
+      message("No token found for dataset: ", base_name)
+    }
+  )
 }
 
 #' List all datasets with stored tokens
 #'
-#' This function returns a list of datasets with securely stored
-#' authentication tokens.
+#' This function returns a list of datasets that have stored tokens in the keyring.
+#' If the keyring cannot be accessed (e.g., in a virtual machine or unsupported environment),
+#' it returns an empty vector and prints a message.
 #'
-#' @return A vector of strings containing the names of datasets.
+#' @return A character vector of dataset names with stored tokens. If the keyring cannot be accessed,
+#' an empty vector is returned with a message.
 #' @examples
 #' bdpe_list_tokens()
 #' @export
 bdpe_list_tokens <- function() {
-  entries <- keyring::key_list(service = "BigDataPE")
-  return(entries$username)
+  tryCatch(
+    {
+      # Attempt to list keyring entries
+      entries <- keyring::key_list(service = "BigDataPE")
+      return(entries$username)
+    },
+    error = function(e) {
+      # Graceful fallback if keyring cannot be accessed
+      message("Keyring not accessible. Ensure the keyring is configured or supported in this environment.")
+      return(character(0))
+    }
+  )
 }
 
 

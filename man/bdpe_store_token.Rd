@@ -12,11 +12,14 @@ bdpe_store_token(base_name, token)
 \item{token}{The authentication token for the dataset.}
 }
 \value{
-No return value. The token is securely stored.
+No return value. If the keyring is available, the token is securely stored.
+Otherwise, a message is displayed.
 }
 \description{
 This function securely stores an authentication token
-for a specific dataset using the \code{keyring} package.
+for a specific dataset using the \code{keyring} package. If the
+keyring is not accessible (e.g., in a virtual machine or unsupported environment),
+it prints a message and does not attempt to store the token.
 }
 \examples{
 bdpe_store_token("education_dataset", "your-token-here")

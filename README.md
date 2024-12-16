@@ -1,17 +1,19 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# BigDataPE <a href="https://monitoramento.sepe.pe.gov.br/bigdatape/"><img src="man/figures/logo.png" align="right" height="106" alt="BigDataPE website" /></a>
+# BigDataPE <a href="https://github.com/StrategicProjects/bigdatape"><img src="man/figures/logo.png" align="right" height="106" alt="BigDataPE website" /></a>
 
 <!-- badges: start -->
 
 ![](https://img.shields.io/badge/devel%20version-0.0.9-blue.svg)
 <!-- badges: end -->
 
+> **Note:** To access the BigDataPE APIs, you must be connected to the
+> “PE Integrado” network or use a VPN.
+
 **BigDataPE** is an R package that provides a secure and intuitive way
-to access datasets from the [BigDataPE
-platform](https://www.bigdata.pe.gov.br/). The package allows users to
-fetch data from the API using token-based authentication, manage
+to access datasets from the BigDataPE platform. The package allows users
+to fetch data from the API using token-based authentication, manage
 multiple tokens for different datasets, and retrieve data efficiently
 using chunking.
 

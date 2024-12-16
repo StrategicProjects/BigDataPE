@@ -10,11 +10,12 @@ bdpe_get_token(base_name)
 \item{base_name}{The name of the dataset.}
 }
 \value{
-A string containing the authentication token.
+A string containing the authentication token, or \code{NULL} if the token is not found.
 }
 \description{
 This function retrieves the authentication token securely
-stored for a specific dataset.
+stored for a specific dataset. If the token is not found,
+it returns \code{NULL} and prints a message instead of throwing an error.
 }
 \examples{
 token <- bdpe_get_token("education_dataset")
