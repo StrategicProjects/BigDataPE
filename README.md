@@ -8,7 +8,7 @@
 ![CRAN_Status_Badge](https://www.r-pkg.org/badges/version/BigDataPE) 
 ![CRAN Downloads](https://cranlogs.r-pkg.org/badges/grand-total/BigDataPE) 
 ![License](https://img.shields.io/badge/license-MIT-darkviolet.svg) 
-![](https://img.shields.io/badge/devel%20version-0.0.9-orangered.svg)
+![](https://img.shields.io/badge/devel%20version-0.0.95-orangered.svg)
 
 <!-- badges: end -->
 
@@ -41,7 +41,7 @@ library(BigDataPE)
 
 ## Features
 
-- Securely store and manage API tokens with the `keyring` package.
+- Securely store and manage API tokens with the environment variables.
 - Fetch data from the BigDataPE API using a simple interface.
 - Retrieve large datasets iteratively using chunking.
 - Easily manage multiple datasets and their associated tokens.
