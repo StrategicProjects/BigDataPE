@@ -21,7 +21,7 @@ Imports:
     dplyr,
     tibble,
     httr2
-URL: <https://strategicprojects.github.io/BigDataPE>, <https://github.com/StrategicProjects/bigdatape>
+URL: <https://strategicprojects.github.io/BigDataPE/>, <https://github.com/StrategicProjects/bigdatape>
 Suggests:
     knitr,
     rmarkdown,

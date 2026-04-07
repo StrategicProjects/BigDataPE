@@ -305,6 +305,6 @@ bdpe_remove_token("dengue")
 
 ## References
 
-- [Big Data PE platform](https://www.bigdata.pe.gov.br)
+- [Big Data Package](https://strategicprojects.github.io/BigDataPE/)
 - [BigDataPE package
   repository](https://github.com/StrategicProjects/bigdatape)
