@@ -30,7 +30,7 @@ knitr::opts_chunk$set(
 <table class="important-banner"><tr><td>
 &#x2755;️ <strong class="important-title">Disclaimer</strong><br>
 This package acts as a wrapper for Brazilian public APIs provided by the
-[Big Data PE](https://www.bigdata.pe.gov.br) platform, maintained by the
+**Big Data PE** platform, maintained by the
 Government of the State of Pernambuco, which is the institution responsible
 for the data. To maintain consistency with R package development standards,
 all wrapper functions use English names and English parameter names (e.g.,
