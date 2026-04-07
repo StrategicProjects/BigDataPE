@@ -2,7 +2,7 @@
 
 0 errors ✔ | 0 warnings ✔ | 0 notes ✔
 
-* This is a new release.
+* Version 0.1.0 update: migrated console output to the `cli` package for richer formatting, added new authors, improved input validation.
 
 ###  Mail from Uwe Ligges
 

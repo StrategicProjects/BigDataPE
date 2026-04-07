@@ -1,22 +1,30 @@
 Package: BigDataPE
 Title: Secure and Intuitive Access to 'BigDataPE' 'API' Datasets
-Version: 0.0.96
-Date: 2025-04-02
+Version: 0.1.0
+Date: 2025-04-07
 Authors@R: c(
             person("Andre", "Leite", email = "leite@castlab.org", role = c("aut", "cre")),
             person("Hugo", "Vaconcelos", email = "hugo.vasconcelos@ufpe.br", role = "aut"),
-            person("Diogo", "Bezerra", email = "diogo.bezerra@ufpe.br", role = "aut"))
+            person("Diogo", "Bezerra", email = "diogo.bezerra@ufpe.br", role = "aut"),
+            person("Marcos", "Wasilew", email = "marcos.wasilew@gmail.com", role = "aut"),
+            person("Carlos", "Amorin", email = "carlos.agaf@ufpe.br", role = "aut"))
 Description: Designed to simplify the process of retrieving datasets from the 'Big Data PE' platform using secure token-based authentication. It provides functions for securely storing, retrieving, and managing tokens associated with specific datasets, as well as fetching and processing data using the 'httr2' package. 
 License: MIT + file LICENSE
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
 LazyData: true
-RoxygenNote: 7.3.2
+RoxygenNote: 7.3.3
 Depends:
    R (>= 4.1.0)
 Imports:
+    cli,
     dplyr,
     tibble,
     httr2
 URL: <https://github.com/StrategicProjects/bigdatape>
+Suggests:
+    knitr,
+    rmarkdown,
+    tidyr
+VignetteBuilder: knitr
 Config/Needs/website: tidyverse/tidytemplate

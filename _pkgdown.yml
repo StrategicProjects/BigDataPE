@@ -20,12 +20,18 @@ includes:
 
 navbar:
   structure:
+    left: [intro, reference, articles]
     right: [search, github]
   components:
     github:
       icon: fa-github
       href: https://github.com/StrategicProjects/bigdatape
       aria-label: Github
+    articles:
+      text: Articles
+      menu:
+        - text: "Exploring Dengue Data with BigDataPE"
+          href: articles/dengue-bigdatape.html
 # navbar:
 #   structure:
 #     left:  [intro, reference]
@@ -42,7 +48,7 @@ footer:
         computational document processing<br>developed at the [Secretaria Executiva
         de Monitoramento Estratégico](https://monitoramento.sepe.pe.gov.br).
       developed_by: |
-        Developed by André Leite, Diogo Bezerra and Hugo Medeiros
+        Developed by André Leite, Diogo Bezerra, Hugo Medeiros, Marcos Wasilew and Carlos Amorin
 
 development:
   mode: auto
