@@ -3,4 +3,4 @@
 ### All vignettes
 
 - [Exploring Dengue Data with
-  BigDataPE](https://monitoramento.sepe.pe.gov.br/bigdatape/articles/dengue-bigdatape.md):
+  BigDataPE](https://strategicprojects.github.io/BigDataPE/articles/dengue-bigdatape.md):

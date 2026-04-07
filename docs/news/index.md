@@ -16,16 +16,16 @@
   This provides richer, more informative, and consistently formatted
   console output.
 - Added progress feedback in
-  [`bdpe_fetch_chunks()`](https://monitoramento.sepe.pe.gov.br/bigdatape/reference/bdpe_fetch_chunks.md)
+  [`bdpe_fetch_chunks()`](https://strategicprojects.github.io/BigDataPE/reference/bdpe_fetch_chunks.md)
   when `verbosity > 0`, showing the number of records fetched per chunk
   and the running total.
 - Added a completion summary message in
-  [`bdpe_fetch_chunks()`](https://monitoramento.sepe.pe.gov.br/bigdatape/reference/bdpe_fetch_chunks.md)
+  [`bdpe_fetch_chunks()`](https://strategicprojects.github.io/BigDataPE/reference/bdpe_fetch_chunks.md)
   reporting the total number of records retrieved.
 - Improved input validation in
-  [`bdpe_fetch_data()`](https://monitoramento.sepe.pe.gov.br/bigdatape/reference/bdpe_fetch_data.md)
+  [`bdpe_fetch_data()`](https://strategicprojects.github.io/BigDataPE/reference/bdpe_fetch_data.md)
   and
-  [`bdpe_fetch_chunks()`](https://monitoramento.sepe.pe.gov.br/bigdatape/reference/bdpe_fetch_chunks.md)
+  [`bdpe_fetch_chunks()`](https://strategicprojects.github.io/BigDataPE/reference/bdpe_fetch_chunks.md)
   with descriptive `cli` error messages replacing
   [`stopifnot()`](https://rdrr.io/r/base/stopifnot.html) calls.
 - Numeric parameters (`limit`, `offset`, `total_limit`, `chunk_size`,
@@ -34,7 +34,7 @@
   informative error is raised only when conversion is not possible
   (e.g., non-numeric or fractional values).
 - Improved HTTP error handling in
-  [`bdpe_fetch_data()`](https://monitoramento.sepe.pe.gov.br/bigdatape/reference/bdpe_fetch_data.md):
+  [`bdpe_fetch_data()`](https://strategicprojects.github.io/BigDataPE/reference/bdpe_fetch_data.md):
   connection failures and HTTP errors (e.g., 503 Service Unavailable)
   now produce clear, user-friendly messages with guidance on network
   requirements and next steps, instead of raw `httr2` errors.
@@ -53,7 +53,7 @@ CRAN release: 2025-04-02
 ### Bug Fixes
 
 - Fixed an issue in
-  [`bdpe_fetch_chunks()`](https://monitoramento.sepe.pe.gov.br/bigdatape/reference/bdpe_fetch_chunks.md)
+  [`bdpe_fetch_chunks()`](https://strategicprojects.github.io/BigDataPE/reference/bdpe_fetch_chunks.md)
   where the `offset` parameter was being formatted as a scientific
   double (e.g., `1e+05`), which caused the API to fail. The value is now
   properly formatted as an integer string, ensuring compatibility with

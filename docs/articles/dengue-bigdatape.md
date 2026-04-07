@@ -61,7 +61,7 @@ bdpe_list_tokens()
 
 ### Basic query
 
-[`bdpe_fetch_data()`](https://monitoramento.sepe.pe.gov.br/bigdatape/reference/bdpe_fetch_data.md)
+[`bdpe_fetch_data()`](https://strategicprojects.github.io/BigDataPE/reference/bdpe_fetch_data.md)
 is the most direct way to query the API. Let’s fetch the first 100
 records:
 
@@ -140,7 +140,7 @@ nrow(dengue_female_recife)
 ## 3. Fetching data in chunks
 
 When the data volume is large, use
-[`bdpe_fetch_chunks()`](https://monitoramento.sepe.pe.gov.br/bigdatape/reference/bdpe_fetch_chunks.md)
+[`bdpe_fetch_chunks()`](https://strategicprojects.github.io/BigDataPE/reference/bdpe_fetch_chunks.md)
 which paginates automatically. To fetch all 1,009 records in blocks of
 500:
 

@@ -3,7 +3,8 @@
 ![CRAN_Status_Badge](https://www.r-pkg.org/badges/version/BigDataPE) 
 ![CRAN Downloads](https://cranlogs.r-pkg.org/badges/grand-total/BigDataPE) 
 ![License](https://img.shields.io/badge/license-MIT-darkviolet.svg) 
-![](https://img.shields.io/badge/devel%20version-0.1.0-orangered.svg)
+![Devl
+Badge](https://img.shields.io/badge/devel%20version-0.1.0-orangered.svg)
 
 **BigDataPE** is an R package that provides a secure and intuitive way
 to access datasets from the BigDataPE platform. The package allows users
@@ -11,8 +12,7 @@ to fetch data from the API using token-based authentication, manage
 multiple tokens for different datasets, and retrieve data efficiently
 using chunking.
 
-> **Note:** To access the **BigDataPE API**, you must be connected to
-> the “PE Conectado” network or use a VPN.
+[TABLE]
 
 ## Installation
 
