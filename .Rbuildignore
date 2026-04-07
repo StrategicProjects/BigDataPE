@@ -1,6 +1,6 @@
 ^BigDataPE\.Rproj$
 ^\.Rproj\.user$
-^\.gitignore
+^\.github$
 ^.DS_Store
 ^_pkgdown\.yml$
 ^docs$
