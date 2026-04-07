@@ -47,6 +47,7 @@ po/*~
 
 # RStudio Connect folder
 rsconnect/
-docs
 docs.zip
+.DS_Store
+.Rbuildignore
 .DS_Store

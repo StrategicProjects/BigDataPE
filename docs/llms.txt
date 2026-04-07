@@ -1,16 +1,9 @@
-
-<!-- README.md is generated from README.Rmd. Please edit that file -->
-
-# BigDataPE <a href="https://github.com/StrategicProjects/bigdatape"><img src="man/figures/logo.png" align="right" height="106" alt="BigDataPE website" /></a>
-
-<!-- badges: start -->
+# BigDataPE
 
 ![CRAN_Status_Badge](https://www.r-pkg.org/badges/version/BigDataPE) 
 ![CRAN Downloads](https://cranlogs.r-pkg.org/badges/grand-total/BigDataPE) 
 ![License](https://img.shields.io/badge/license-MIT-darkviolet.svg) 
 ![](https://img.shields.io/badge/devel%20version-0.1.0-orangered.svg)
-
-<!-- badges: end -->
 
 **BigDataPE** is an R package that provides a secure and intuitive way
 to access datasets from the BigDataPE platform. The package allows users
@@ -26,6 +19,7 @@ using chunking.
 You can install the `BigDataPE` package directly from GitHub:
 
 ``` r
+
 # Install the devtools package if you haven't already
 install.packages("devtools")
 
@@ -36,6 +30,7 @@ devtools::install_github("StrategicProjects/bigdatape")
 After installation, load the package:
 
 ``` r
+
 library(BigDataPE)
 ```
 
@@ -54,6 +49,7 @@ This function securely stores an authentication token for a specific
 dataset.
 
 ``` r
+
 bdpe_store_token(base_name, token)
 ```
 
@@ -65,6 +61,7 @@ bdpe_store_token(base_name, token)
 **Example**:
 
 ``` r
+
 bdpe_store_token("education_dataset", "your-token-here")
 ```
 
@@ -76,6 +73,7 @@ This function retrieves the securely stored token for a specific
 dataset.
 
 ``` r
+
 bdpe_get_token(base_name)
 ```
 
@@ -86,6 +84,7 @@ bdpe_get_token(base_name)
 **Example**:
 
 ``` r
+
 token <- bdpe_get_token("education_dataset")
 ```
 
@@ -96,6 +95,7 @@ token <- bdpe_get_token("education_dataset")
 This function removes the token associated with a specific dataset.
 
 ``` r
+
 bdpe_remove_token(base_name)
 ```
 
@@ -106,6 +106,7 @@ bdpe_remove_token(base_name)
 **Example**:
 
 ``` r
+
 bdpe_remove_token("education_dataset")
 ```
 
@@ -116,12 +117,14 @@ bdpe_remove_token("education_dataset")
 This function lists all datasets with stored tokens.
 
 ``` r
+
 bdpe_list_tokens()
 ```
 
 **Example**:
 
 ``` r
+
 datasets <- bdpe_list_tokens()
 print(datasets)
 ```
@@ -134,6 +137,7 @@ This function retrieves data from the BigDataPE API using securely
 stored tokens.
 
 ``` r
+
 bdpe_fetch_data(
   base_name, 
   limit = 100, 
@@ -153,6 +157,7 @@ bdpe_fetch_data(
 **Example**:
 
 ``` r
+
 data <- bdpe_fetch_data("education_dataset", limit = 50)
 ```
 
@@ -163,6 +168,7 @@ data <- bdpe_fetch_data("education_dataset", limit = 50)
 This function retrieves data from the API iteratively in chunks.
 
 ``` r
+
 bdpe_fetch_chunks(
   base_name, 
   total_limit = Inf, 
@@ -183,6 +189,7 @@ bdpe_fetch_chunks(
 **Example**:
 
 ``` r
+
 # Fetch up to 500 records in chunks of 100
 data <- bdpe_fetch_chunks(
           "education_dataset", 
@@ -202,6 +209,7 @@ all_data <- bdpe_fetch_chunks(
 This internal function constructs a URL with query parameters.
 
 ``` r
+
 parse_queries(url, query_list)
 ```
 
@@ -213,6 +221,7 @@ parse_queries(url, query_list)
 **Example**:
 
 ``` r
+
 url <- parse_queries(
             "https://www.example.com", 
             list(param1 = "value1", param2 = "value2")
@@ -227,6 +236,7 @@ print(url)
 Here’s a complete example workflow:
 
 ``` r
+
 # Store a token for a dataset
 bdpe_store_token("education_dataset", "your-token-here")
 
@@ -260,3 +270,29 @@ issue or a pull request on
 
 This package is licensed under the MIT License. See the `LICENSE` file
 for more details.
+
+# Package index
+
+## All functions
+
+- [`bdpe_fetch_chunks()`](https://monitoramento.sepe.pe.gov.br/bigdatape/reference/bdpe_fetch_chunks.md)
+  : Fetch data from the BigDataPE API in chunks
+- [`bdpe_fetch_data()`](https://monitoramento.sepe.pe.gov.br/bigdatape/reference/bdpe_fetch_data.md)
+  : Fetch data from the BigDataPE API
+- [`bdpe_get_token()`](https://monitoramento.sepe.pe.gov.br/bigdatape/reference/bdpe_get_token.md)
+  : Retrieve the token associated with a specific dataset
+- [`bdpe_list_tokens()`](https://monitoramento.sepe.pe.gov.br/bigdatape/reference/bdpe_list_tokens.md)
+  : List all datasets that have stored tokens in environment variables
+- [`bdpe_remove_token()`](https://monitoramento.sepe.pe.gov.br/bigdatape/reference/bdpe_remove_token.md)
+  : Remove the token associated with a specific dataset
+- [`bdpe_store_token()`](https://monitoramento.sepe.pe.gov.br/bigdatape/reference/bdpe_store_token.md)
+  : Store a token in an environment variable for a specific dataset
+- [`parse_queries()`](https://monitoramento.sepe.pe.gov.br/bigdatape/reference/parse_queries.md)
+  : Constructs a URL with query parameters
+
+# Articles
+
+### All vignettes
+
+- [Exploring Dengue Data with
+  BigDataPE](https://monitoramento.sepe.pe.gov.br/bigdatape/articles/dengue-bigdatape.md):
