@@ -51,3 +51,7 @@ docs.zip
 .DS_Store
 .Rbuildignore
 .DS_Store
+
+# Claude Code
+CLAUDE.md
+.claude/

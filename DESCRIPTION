@@ -1,10 +1,10 @@
 Package: BigDataPE
 Title: Secure and Intuitive Access to 'BigDataPE' 'API' Datasets
-Version: 0.1.0
-Date: 2025-04-07
+Version: 0.1.0.9000
+Date: 2026-06-26
 Authors@R: c(
-            person("Andre", "Leite", email = "leite@castlab.org", role = c("aut", "cre")),
-            person("Hugo", "Vaconcelos", email = "hugo.vasconcelos@ufpe.br", role = "aut"),
+            person("André", "Leite", email = "leite@castlab.org", role = c("aut", "cre")),
+            person("Hugo", "Vasconcelos", email = "hugo.vasconcelos@ufpe.br", role = "aut"),
             person("Diogo", "Bezerra", email = "diogo.bezerra@ufpe.br", role = "aut"),
             person("Marcos", "Wasilew", email = "marcos.wasilew@gmail.com", role = "aut"),
             person("Carlos", "Amorin", email = "carlos.agaf@ufpe.br", role = "aut"))
@@ -13,7 +13,6 @@ License: MIT + file LICENSE
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
 LazyData: true
-RoxygenNote: 7.3.3
 Depends:
    R (>= 4.1.0)
 Imports:
@@ -28,3 +27,4 @@ Suggests:
     tidyr
 VignetteBuilder: knitr
 Config/Needs/website: tidyverse/tidytemplate
+Config/roxygen2/version: 8.0.0
