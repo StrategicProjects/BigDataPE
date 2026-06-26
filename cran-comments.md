@@ -2,6 +2,13 @@
 
 0 errors ✔ | 0 warnings ✔ | 0 notes ✔
 
+* Version 0.2.0 update: the data-retrieval engine was extracted into the generic
+  `apifetch` package (already on CRAN). Every `bdpe_*` function is now a thin
+  wrapper over its `apifetch::af_*` counterpart. The public API, function
+  signatures, and the environment-variable token names (`BigDataPE_<dataset>`)
+  are unchanged, so existing code and stored tokens keep working. `Imports` is
+  now just `apifetch`; `cli`/`dplyr`/`tibble`/`httr2` are inherited transitively.
+
 * Version 0.1.0 update: migrated console output to the `cli` package for richer formatting, added new authors, improved input validation.
 
 ###  Mail from Uwe Ligges
