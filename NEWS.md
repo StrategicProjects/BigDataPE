@@ -12,7 +12,7 @@
 ## Changes
 
 - Added `cli` as a package dependency in `Imports`.
-- Added Marcos Wasilew and Carlos Amorin as package authors.
+- Added Marcos Wasilew and Carlos Amorim as package authors.
 - Added vignette "Exploring Dengue Data with BigDataPE" demonstrating the full package workflow with the public dengue dataset.
 
 # BigDataPE 0.0.96
