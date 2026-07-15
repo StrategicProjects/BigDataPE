@@ -1,3 +1,10 @@
+## Test environments
+
+* local macOS, R release — 0 errors | 0 warnings | 0 notes
+* win-builder, R-devel — clean (an earlier build's single "possibly
+  misspelled words: pre" NOTE came from the hyphenated word
+  "pre-configured" and was resolved by rewording the Description).
+
 ## R CMD check results
 
 0 errors ✔ | 0 warnings ✔ | 0 notes ✔
