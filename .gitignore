@@ -39,8 +39,9 @@ vignettes/*.pdf
 # R Environment Variables
 .Renviron
 
-# pkgdown site
-# docs/
+# pkgdown site — built fresh in CI (pkgdown.yaml) and deployed via GitHub
+# Pages Actions; never served from this tracked folder, so it is not versioned.
+docs/
 
 # translation temp files
 po/*~
