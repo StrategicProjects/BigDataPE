@@ -8,11 +8,10 @@ Authors@R: c(
             person("Diogo", "Bezerra", email = "diogo.bezerra@ufpe.br", role = "aut"),
             person("Marcos", "Wasiliew", email = "marcos.wasilew@gmail.com", role = "aut"),
             person("Carlos", "Amorim", email = "carlos.agaf@ufpe.br", role = "aut"))
-Description: Designed to simplify the process of retrieving datasets from the 'Big Data PE' platform using secure token-based authentication. It provides functions for securely storing, retrieving, and managing tokens associated with specific datasets, as well as fetching and processing data. The data-retrieval engine is provided by the generic 'apifetch' package, of which 'BigDataPE' is a pre-configured use case.
+Description: Designed to simplify the process of retrieving datasets from the 'Big Data PE' platform using secure token-based authentication. It provides functions for securely storing, retrieving, and managing tokens associated with specific datasets, as well as fetching and processing data. The data-retrieval engine is provided by the generic 'apifetch' package, which 'BigDataPE' configures for the Big Data PE service.
 License: MIT + file LICENSE
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
-LazyData: true
 Depends:
    R (>= 4.1.0)
 Imports:
