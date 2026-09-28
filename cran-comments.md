@@ -1,7 +1,21 @@
 ## Test environments
 
-* local macOS, R release — 0 errors | 0 warnings | 0 notes
-* win-builder, R-devel — TODO: run `devtools::check_win_devel()` before submitting
+* local macOS, R 4.6.0, against apifetch 0.2.0 — 0 errors | 0 warnings | 0 notes
+  (19 tests, HTTP mocked)
+* win-builder, R-devel — pending: run once 'apifetch' 0.2.0 is on CRAN
+
+## Dependency
+
+This version requires 'apifetch' >= 0.2.0 (same maintainer), which was
+submitted to CRAN on 2026-09-28. This update is submitted only after that
+version is published.
+
+## Breaking changes
+
+Two deliberate, documented behaviour changes (see NEWS.md): the default
+`chunk_size` of `bdpe_fetch_chunks()` is now 50000 (was 500000), and
+`bdpe_fetch_data()` drops the API's `Mensagem` status column. There are no
+reverse dependencies.
 
 ## R CMD check results
 
