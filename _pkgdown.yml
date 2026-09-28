@@ -25,7 +25,7 @@ navbar:
   components:
     github:
       icon: fa-github
-      href: https://github.com/StrategicProjects/bigdatape
+      href: https://github.com/StrategicProjects/BigDataPE
       aria-label: Github
     articles:
       text: Articles
@@ -48,7 +48,7 @@ footer:
         computational document processing<br>developed at the [Secretaria Executiva
         de Monitoramento Estratégico](https://monitoramento.sepe.pe.gov.br).
       developed_by: |
-        Developed by André Leite, Diogo Bezerra, Hugo Vasconcelos, Marcos Wasiliew and Carlos Amorim
+        Developed by André Leite, Diogo Bezerra, Hugo Vasconcelos, Marcos Wasiliew, Carlos Amorim and Júlia Nascimento Barreto
 
 development:
   mode: release

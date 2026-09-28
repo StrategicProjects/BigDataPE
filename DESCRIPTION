@@ -1,16 +1,21 @@
 Package: BigDataPE
 Title: Secure and Intuitive Access to 'BigDataPE' 'API' Datasets
-Version: 0.2.0
-Date: 2026-07-14
+Version: 0.3.0
+Date: 2026-09-28
 Authors@R: c(
-            person("André", "Leite", email = "leite@castlab.org", role = c("aut", "cre")),
-            person("Hugo", "Vasconcelos", email = "hugo.vasconcelos@ufpe.br", role = "aut"),
-            person("Diogo", "Bezerra", email = "diogo.bezerra@ufpe.br", role = "aut"),
-            person("Marcos", "Wasiliew", email = "marcos.wasiliew@gmail.com", role = "aut",
-                   comment = c(ORCID = "0009-0004-4694-3159")),
-            person("Carlos", "Amorim", email = "carlos.agaf@ufpe.br", role = "aut"),
-            person("Júlia", "Nascimento Barreto", email = "juliabarreto@gd.seplag.pe.gov.br", role = "aut",
-                   comment = c(ORCID = "0009-0004-2851-7770")))
+    person("André", "Leite", email = "leite@castlab.org", role = c("aut", "cre"),
+           comment = c(ORCID = "0000-0002-4718-9766")),
+    person("Hugo", "Vasconcelos", email = "hugo.vasconcelos@ufpe.br", role = "aut",
+           comment = c(ORCID = "0000-0001-6249-0920")),
+    person("Diogo", "Bezerra", email = "diogo.bezerra@ufpe.br", role = "aut",
+           comment = c(ORCID = "0000-0002-1216-8674")),
+    person("Marcos", "Wasiliew", email = "marcos.wasiliew@gmail.com", role = "aut",
+           comment = c(ORCID = "0009-0004-4694-3159")),
+    person("Carlos", "Amorim", email = "carlos.agaf@ufpe.br", role = "aut",
+           comment = c(ORCID = "0000-0001-6315-8305")),
+    person("Júlia", "Nascimento Barreto",
+           email = "juliabarreto@gd.seplag.pe.gov.br", role = "aut",
+           comment = c(ORCID = "0009-0004-2851-7770")))
 Description: Designed to simplify the process of retrieving datasets from the 'Big Data PE' platform using secure token-based authentication. It provides functions for securely storing, retrieving, and managing tokens associated with specific datasets, as well as fetching and processing data. The data-retrieval engine is provided by the generic 'apifetch' package, which 'BigDataPE' configures for the Big Data PE service.
 License: MIT + file LICENSE
 Encoding: UTF-8
@@ -18,14 +23,20 @@ Roxygen: list(markdown = TRUE)
 Depends:
    R (>= 4.1.0)
 Imports:
-    apifetch (>= 0.1.0)
-URL: <https://strategicprojects.github.io/BigDataPE/>, <https://github.com/StrategicProjects/bigdatape>
+    apifetch (>= 0.2.0)
+URL: https://strategicprojects.github.io/BigDataPE/,
+    https://github.com/StrategicProjects/BigDataPE
+BugReports: https://github.com/StrategicProjects/BigDataPE/issues
 Suggests:
     knitr,
     rmarkdown,
     tidyr,
     dplyr,
-    tibble
+    tibble,
+    httr2 (>= 1.0.0),
+    testthat (>= 3.0.0),
+    withr
+Config/testthat/edition: 3
 VignetteBuilder: knitr
 Config/Needs/website: tidyverse/tidytemplate
 Config/roxygen2/version: 8.0.0

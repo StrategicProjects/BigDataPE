@@ -1,13 +1,18 @@
 ## Test environments
 
 * local macOS, R release — 0 errors | 0 warnings | 0 notes
-* win-builder, R-devel — clean (an earlier build's single "possibly
-  misspelled words: pre" NOTE came from the hyphenated word
-  "pre-configured" and was resolved by rewording the Description).
+* win-builder, R-devel — TODO: run `devtools::check_win_devel()` before submitting
 
 ## R CMD check results
 
 0 errors ✔ | 0 warnings ✔ | 0 notes ✔
+
+* Version 0.3.0 update: requires 'apifetch' >= 0.2.0 (bug fixes in the
+  underlying engine), adds an `overwrite` argument to `bdpe_store_token()`,
+  makes `bdpe_fetch_data()` drop the API's status column (as
+  `bdpe_fetch_chunks()` already did), lowers the default `chunk_size` of
+  `bdpe_fetch_chunks()` to 50000, adds authors' ORCID iDs and a test suite
+  (HTTP is mocked, so the check does not contact the API).
 
 * Version 0.2.0 update: the data-retrieval engine was extracted into the generic
   `apifetch` package (already on CRAN). Every `bdpe_*` function is now a thin
