@@ -6,8 +6,11 @@ Authors@R: c(
             person("André", "Leite", email = "leite@castlab.org", role = c("aut", "cre")),
             person("Hugo", "Vasconcelos", email = "hugo.vasconcelos@ufpe.br", role = "aut"),
             person("Diogo", "Bezerra", email = "diogo.bezerra@ufpe.br", role = "aut"),
-            person("Marcos", "Wasiliew", email = "marcos.wasilew@gmail.com", role = "aut"),
-            person("Carlos", "Amorim", email = "carlos.agaf@ufpe.br", role = "aut"))
+            person("Marcos", "Wasiliew", email = "marcos.wasiliew@gmail.com", role = "aut",
+                   comment = c(ORCID = "0009-0004-4694-3159")),
+            person("Carlos", "Amorim", email = "carlos.agaf@ufpe.br", role = "aut"),
+            person("Júlia", "Nascimento Barreto", email = "juliabarreto@gd.seplag.pe.gov.br", role = "aut",
+                   comment = c(ORCID = "0009-0004-2851-7770")))
 Description: Designed to simplify the process of retrieving datasets from the 'Big Data PE' platform using secure token-based authentication. It provides functions for securely storing, retrieving, and managing tokens associated with specific datasets, as well as fetching and processing data. The data-retrieval engine is provided by the generic 'apifetch' package, which 'BigDataPE' configures for the Big Data PE service.
 License: MIT + file LICENSE
 Encoding: UTF-8
