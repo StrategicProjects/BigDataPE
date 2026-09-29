@@ -1,14 +1,16 @@
 ## Test environments
 
-* local macOS, R 4.6.0, against apifetch 0.2.0 — 0 errors | 0 warnings | 0 notes
-  (19 tests, HTTP mocked)
-* win-builder, R-devel — pending: run once 'apifetch' 0.2.0 is on CRAN
+* local macOS, R 4.6.0 (`--as-cran`) — 0 errors | 0 warnings | 0 notes
+  (19 tests, HTTP mocked; the only local NOTE is the outdated system
+  HTML Tidy used for manual validation)
+* win-builder, R-devel — TODO: result of `devtools::check_win_devel()`
+* GitHub Actions: macOS, Windows and Ubuntu (R release)
 
 ## Dependency
 
-This version requires 'apifetch' >= 0.2.0 (same maintainer), which was
-submitted to CRAN on 2026-09-28. This update is submitted only after that
-version is published.
+This version requires 'apifetch' >= 0.2.0 (same maintainer), published on
+CRAN on 2026-09-29. During that submission BigDataPE 0.2.0 was its only
+strong reverse dependency, and it passed the reverse-dependency check.
 
 ## Breaking changes
 
