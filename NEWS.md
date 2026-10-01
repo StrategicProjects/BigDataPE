@@ -1,4 +1,8 @@
+# BigDataPE (development version)
+
 # BigDataPE 0.3.0
+
+*Accepted on CRAN (2026-10-01).*
 
 ## Breaking changes
 
